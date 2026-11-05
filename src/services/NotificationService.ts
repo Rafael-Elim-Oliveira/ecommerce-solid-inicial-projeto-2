@@ -1,6 +1,8 @@
+import { injectable } from "inversify"
 import { Order } from '../domain/Order';
 import { IMailProvider } from '../providers/IMailProvider';
 
+@injectable()
 export class NotificationService {
   constructor(private mailProvider: IMailProvider) {}
 

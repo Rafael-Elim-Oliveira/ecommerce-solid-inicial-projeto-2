@@ -1,8 +1,10 @@
+import { injectable } from 'inversify';
 import { Request, Response } from 'express';
 import logger from '../lib/logger';
 import { PaymentError, ValidationError } from '../domain/errors';
 import { OrderService } from '../services/OrderService';
 
+@injectable()
 export class OrderController {
   constructor(private orderService: OrderService) {}
 

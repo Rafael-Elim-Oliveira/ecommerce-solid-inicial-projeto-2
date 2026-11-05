@@ -1,7 +1,9 @@
+import { injectable } from 'inversify';
 import { PrismaClient } from '@prisma/client';
 import { ProductData } from '../domain/IProduct';
 import { IProductRepository } from './IProductRepository';
 
+@injectable()
 export class PrismaProductRepository implements IProductRepository {
   constructor(private prisma: PrismaClient) {}
 

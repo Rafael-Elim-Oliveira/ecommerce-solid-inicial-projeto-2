@@ -1,7 +1,9 @@
+import { injectable } from 'inversify';
 import { PrismaClient } from '@prisma/client';
 import { Order, OrderLine } from '../domain/Order';
 import { IOrderRepository } from './IOrderRepository';
 
+@injectable()
 export class PrismaOrderRepository implements IOrderRepository {
   constructor(private prisma: PrismaClient) {}
 
