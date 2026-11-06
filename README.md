@@ -10,27 +10,28 @@ Duas formas distintas de execução:
 
 2. infraestrutura real
 
-## 1. Rodar Offline  
+## 1. Rodar Offline
 
 - configurar o arquivo .env  
-```env  
-APP_ENV=test  
+env  
+APP_ENV=test
 
 - executar  
-```bash  
+bash  
 npm run dev  
+
 
 ## 2. Rodar real  
 
 - configurar o arquivo .env  
-```env  
+env  
 APP_ENV=dev  
 DATABASE_URL="string de conexão" 
 
 - gerar cliente (tipos)  
-```bash  
+bash  
 npx prisma generate  
 
 - executar  
-```bash  
+bash  
 npm run dev
