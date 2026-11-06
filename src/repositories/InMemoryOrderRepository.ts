@@ -6,6 +6,8 @@ import { Order, OrderLine } from "../domain/Order";
 export class InMemoryOrderRepository implements IOrderRepository {
     private orders: Order[] = [];
 
+    constructor() {}
+    
     async create(customer: string, items: OrderLine[], total: number): Promise<Order> {
         const newOrder: Order = {
             id: Math.floor(Math.random() * 100000),

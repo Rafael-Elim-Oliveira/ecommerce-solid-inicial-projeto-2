@@ -1,9 +1,13 @@
 import logger from '../lib/logger';
 import { PaymentError, ValidationError } from '../domain/errors';
 import { IPaymentMethod } from './IPaymentMethod';
+import { injectable } from 'inversify';
 
+@injectable()
 export class CreditCardPayment implements IPaymentMethod {
   readonly name = 'credit_card';
+
+  constructor() {}
 
   async process(total: number, details: any): Promise<void> {
     if (!details?.cardNumber || !details?.cvv) throw new ValidationError('Dados do cartão ausentes');

@@ -1,11 +1,11 @@
-import { injectable } from 'inversify';
+import { injectable, inject } from 'inversify';
 import { PrismaClient } from '@prisma/client';
 import { Order, OrderLine } from '../domain/Order';
 import { IOrderRepository } from './IOrderRepository';
 
 @injectable()
 export class PrismaOrderRepository implements IOrderRepository {
-  constructor(private prisma: PrismaClient) {}
+  constructor(@inject(PrismaClient) private prisma: PrismaClient) {}
 
   async create(customer: string, items: OrderLine[], total: number): Promise<Order> {
     const row = await this.prisma.order.create({

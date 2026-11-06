@@ -14,7 +14,7 @@ export class OrderService {
   constructor(
     @inject(TYPES.ProductRepository) private products: IProductRepository,
     @inject(TYPES.OrderRepository) private orders: IOrderRepository,
-    @inject(TYPES.PaymentMethod) private payments: PaymentMethodRegistry,
+    @inject(TYPES.PaymentMethodRegistry) private payments: PaymentMethodRegistry,
     @inject(TYPES.NotificationService) private notification: NotificationService,
   ) {}
 
